@@ -8,12 +8,25 @@ import './index.css'
 const CartItem = props => (
   <CartContext.Consumer>
     {value => {
-      const {deleteCartItem} = value
+      const {
+        deleteCartItem,
+        incrementCartItemQuantity,
+        decrementCartItemQuantity,
+      } = value
       const {cartItemDetails} = props
       const {id, title, brand, quantity, price, imageUrl} = cartItemDetails
       const onDeleteCartItem = () => {
         deleteCartItem(id)
       }
+
+      const onDecrementQuantity = () => {
+        decrementCartItemQuantity(id)
+      }
+
+      const onIncrementQuantity = () => {
+        incrementCartItemQuantity(id)
+      }
+
       return (
         <li className="cart-item">
           <img className="cart-product-image" src={imageUrl} alt={title} />
@@ -23,11 +36,19 @@ const CartItem = props => (
               <p className="cart-product-brand">by {brand}</p>
             </div>
             <div className="cart-quantity-container">
-              <button type="button" className="quantity-controller-button">
+              <button
+                onClick={onDecrementQuantity}
+                type="button"
+                className="quantity-controller-button"
+              >
                 <BsDashSquare color="#52606D" size={12} />
               </button>
               <p className="cart-quantity">{quantity}</p>
-              <button type="button" className="quantity-controller-button">
+              <button
+                onClick={onIncrementQuantity}
+                type="button"
+                className="quantity-controller-button"
+              >
                 <BsPlusSquare color="#52606D" size={12} />
               </button>
             </div>

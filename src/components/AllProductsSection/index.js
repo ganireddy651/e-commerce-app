@@ -31,7 +31,7 @@ const categoryOptions = [
   },
 ]
 
-const sortbyOptions = [
+const sortByOptions = [
   {
     optionId: 'PRICE_HIGH',
     displayText: 'Price (High-Low)',
@@ -76,7 +76,7 @@ class AllProductsSection extends Component {
   state = {
     productsList: [],
     apiStatus: apiStatusConstants.initial,
-    activeOptionId: sortbyOptions[0].optionId,
+    activeOptionId: sortByOptions[0].optionId,
     activeCategoryId: '',
     searchInput: '',
     activeRatingId: '',
@@ -181,7 +181,7 @@ class AllProductsSection extends Component {
       <div className="all-products-container">
         <ProductsHeader
           activeOptionId={activeOptionId}
-          sortbyOptions={sortbyOptions}
+          sortbyOptions={sortByOptions}
           changeSortby={this.changeSortby}
         />
         <ul className="products-list">
