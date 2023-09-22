@@ -36,3 +36,16 @@
     font-size: 48px;
   }
 }
+.remove-all-container {
+  text-align: right;
+}
+
+.remove-all-btn {
+  background-color: #0b69ff;
+  color: #ffffff;
+  border: 0;
+  outline: none;
+  height: 35px;
+  width: 100px;
+  border-radius: 3px;
+}
