@@ -35,9 +35,9 @@ const Payments = () => {
         const onSubmitPay = e => {
           e.preventDefault()
           if (pay === '') {
-            alert('choose payment option')
+            alert('Please Choose The Payment Option')
           } else {
-            alert('payment successful')
+            alert(`Payment successful Paid By ${pay}  Thank You For Shopping`)
             removeAllCartItems()
           }
         }
